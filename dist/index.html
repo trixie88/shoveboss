@@ -120,12 +120,12 @@
             </div>
             <br>
             <div class="wrapperOfButton">
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
+                <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
                     Calculate Shoving Range
-                </button>
-                <button id="donateBtn" type="button" class="btn btn-warning btn-lg">
+                </button> -->
+                <!-- <button id="donateBtn" type="button" class=" btn-warning btn-lg">
                     Consider Donating
-                </button>
+                </button> -->
             </div>
 
             <div class="row">
@@ -152,8 +152,53 @@
                                     size="2" name="slider-value">%</p>
                             <input type="range" min=".5" max="100" value="25" step=".5" class="slider">
                         </div>
+                        <div class="range-display" id="late">
+                            <br>
+                            <label for="sel1">Ante Size</label>
+                            <!-- <label class="radio-inline"><input type="radio" name="anteRadio" value=0 checked>0%</label> -->
+                            <label class="radio-inline"><input type="radio" name="anteRadio" value=10
+                                    checked>10%</label>
+                            <label class="radio-inline"><input type="radio" name="anteRadio" value=12.5>12.5%</label>
+                            <label for="sel1">Number Of Players</label>
+                            <select class="form-control" id="numOfPlayers">
+                                <option>9</option>
+                                <option>8</option>
+                                <option>7</option>
+                                <!--<option>6</option>
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option> -->
+                            </select>
+                            <label for="sel1">Your Position</label>
+                            <select class="form-control" id="position">
+                                <option>UTG</option>
+                                <option>UTG+1</option>
+                                <option>UTG+2</option>
+                                <option>LOWJACK</option>
+                                <option>HIGHJACK</option>
+                                <option>CUT OFF</option>
+                                <option>BUTTON</option>
+                                <option>SMALL BLIND</option>
+                            </select>
+                            <label for="sel1">Your Stack (Big Blinds)</label>
+                            <select class="form-control" id="bigBlinds">
+                            </select>
+                            <br>
+                            <button type="button" id="calculateBTN" class="btn btn-primary " data-toggle="modal"
+                                data-target="#exampleModal">
+                                Calculate Shoving Range
+                            </button>
+                            <br> <br>
+                            <button id="donateBtn" type="button" class="btn btn-warning btn-lg">
+                                Consider Donating
+                            </button>
+                            <br> <br>
+
+                        </div>
 
                     </div>
+
                     <div style="display: none" class="option-container" id="type-selector">
                         <h3 class="option-header">Hand Ranking Type:</h3>
                         <form class="type-form" id="type-radio-form">
@@ -198,63 +243,9 @@
         </div>
         <br>
     </main>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Fill your Stack, Position and Ante</h5>
 
-                </div>
-                <div class="modal-body">
-                    <div class="card" style="width: 48rem;">
 
-                        <div class="form-group">
-                            <label for="sel1">Ante Size</label>
-                            <!-- <label class="radio-inline"><input type="radio" name="anteRadio" value=0 checked>0%</label> -->
-                            <label class="radio-inline"><input type="radio" name="anteRadio" value=10
-                                    checked>10%</label>
-                            <label class="radio-inline"><input type="radio" name="anteRadio" value=12.5>12.5%</label>
-                            <label for="sel1">Number Of Players</label>
-                            <select class="form-control" id="numOfPlayers">
-                                <option>9</option>
-                                <option>8</option>
-                                <option>7</option>
-                                <!--<option>6</option>
-                                <option>5</option>
-                                <option>4</option>
-                                <option>3</option>
-                                <option>2</option> -->
-                            </select>
-                            <label for="sel1">Your Position</label>
-                            <select class="form-control" id="position">
-                                <option>UTG</option>
-                                <option>UTG+1</option>
-                                <option>UTG+2</option>
-                                <option>LOWJACK</option>
-                                <option>HIGHJACK</option>
-                                <option>CUT OFF</option>
-                                <option>BUTTON</option>
-                                <option>SMALL BLIND</option>
-                            </select>
-                            <label for="sel1">Your Stack (Big Blinds)</label>
-                            <select class="form-control" id="bigBlinds">
-                            </select>
-                        </div>
-                        <!-- <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                        </ul> -->
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="calculateBTN" type="button" class="btn btn-primary">Calculate</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 
 
