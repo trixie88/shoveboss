@@ -2,7 +2,7 @@
 
 <head>
 
-    <!--Google  adsense -->
+    <!--Google adsense -->
     <script data-ad-client="ca-pub-3116177950003955" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -25,8 +25,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--Bootstrap -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -55,197 +53,114 @@
 </head>
 
 <body>
-    <!-- <header>
-        <h1>Poker Range Generator</h1>
-    </header> -->
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Calculate Shoving Range
-    </button> -->
 
-
-    <main>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">ShoveBoss</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="creator.html">Creator</a></li>
-                    <li><a href="donate.html">Donate</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">ShoveBoss</a>
             </div>
-        </nav>
-        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div style="background-color: rgb(182, 150, 158)" class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="creator.html">Creator</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="twelve columns">
+                <h1><span style="font-weight: bold; color:rgb(149, 3, 3)">ShoveBoss</span></h1>
+                <p>
+                    This tool generates shoving ranges for short stack situations in tournaments of Texas Hold'em
+                    Poker
+                    according to <a href="about.html">Nash Equilibrium</a>.
+                    <br>Simply click
+                    "Calculate Shoving Range"
+                    insert the number of players, the ante size, your position and Your Stack in Big Blinds and let
+                    <strong>ShoveBoss</strong> do the math for you.
+                    <br>
+                    ShoveBoss is <strong>ONLY</strong> for chipEV situations and <strong>NOT</strong> for ICM
+                    situations like final
+                    tables or bubble
+                    stages.
+                    <br />
+                </p>
             </div>
-        </nav> -->
-        <div class="container">
-            <div class="row">
-                <div class="twelve columns">
-                    <h1><span style="font-weight: bold; color:rgb(149, 3, 3)">ShoveBoss</span></h1>
-                    <p>
-                        This tool generates shoving ranges for short stack situations in tournaments of Texas Hold'em
-                        Poker
-                        according to <a href="about.html">Nash Equilibrium</a>.
-                        <br>Simply click
-                        "Calculate Shoving Range"
-                        insert the number of players, the ante size, your position and Your Stack in Big Blinds and let
-                        <strong>ShoveBoss</strong> do the math for you.
-                        <br>
-                        ShoveBoss is <strong>ONLY</strong> for chipEV situations and <strong>NOT</strong> for ICM
-                        situations like final
-                        tables or bubble
-                        stages.
-                        <br />
-                    </p>
-                </div>
-            </div>
-            <br>
-            <div class="wrapperOfButton">
-                <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
-                    Calculate Shoving Range
-                </button> -->
-                <!-- <button id="donateBtn" type="button" class=" btn-warning btn-lg">
-                    Consider Donating
-                </button> -->
-            </div>
-
-            <div class="row">
-                <div class="two-thirds column pane">
-                    <svg width="500" height="500" id="handgrid"></svg>
-                </div>
-                <div class="one-third column pane">
-                    <div class="option-container" id="range-selectors">
-                        <!-- <div class="range-display" id="3bet">
-                            <h3 class="option-header">Range Input:</h3>
-                            <p><b><span style="color:#FF0000">3 Bet Range</span></b>: top <input class="range-text"
-                                    type="text" size="2" name="slider-value">%</p>
-                            <input type="range" min=".5" max="100" value="4" step=".5" class="slider">
-                        </div>
-
-                        <div class="range-display" id="early">
-                            <p><b><span style="color:#FF8900">Early Range</span></b>: top <input class="range-text"
-                                    type="text" size="2" name="slider-value">%</p>
-                            <input type="range" min=".5" max="100" value="15" step=".5" class="slider">
-                        </div> -->
-
-                        <div class="range-display" id="late">
-                            <p><b><span style="color:rgb(16, 141, 16)">Range</span></b> <input class="range-text"
-                                    type="text" size="2" name="slider-value">%</p>
-                            <input type="range" min=".5" max="100" value="25" step=".5" class="slider">
-                        </div>
-                        <div class="range-display" id="late">
-                            <br>
-                            <label for="sel1" style="color: rgb(95, 10, 10)">Ante Size</label>
-                            <!-- <label class="radio-inline"><input type="radio" name="anteRadio" value=0 checked>0%</label> -->
-                            <label class="radio-inline"><input type="radio" name="anteRadio" value=10
-                                    checked>10%</label>
-                            <label class="radio-inline"><input type="radio" name="anteRadio" value=12.5>12.5%</label>
-                            <label for="sel1" style="color: rgb(95, 10, 10)">Number Of Players</label>
-                            <select class="form-control" id="numOfPlayers">
-                                <option>9</option>
-                                <option>8</option>
-                                <option>7</option>
-                                <!--<option>6</option>
-                                <option>5</option>
-                                <option>4</option>
-                                <option>3</option>
-                                <option>2</option> -->
-                            </select>
-                            <label for="sel1" style="color: rgb(95, 10, 10)">Your Position</label>
-                            <select class="form-control" id="position">
-                                <option>UTG</option>
-                                <option>UTG+1</option>
-                                <option>UTG+2</option>
-                                <option>LOWJACK</option>
-                                <option>HIGHJACK</option>
-                                <option>CUT OFF</option>
-                                <option>BUTTON</option>
-                                <option>SMALL BLIND</option>
-                            </select>
-                            <label for="sel1" style="color: rgb(95, 10, 10)">Your Stack (Big Blinds)</label>
-                            <select class="form-control" id="bigBlinds">
-                            </select>
-                            <br>
-                            <button type="button" id="calculateBTN" class="btn btn-primary " data-toggle="modal"
-                                data-target="#exampleModal">
-                                Calculate Shoving Range
-                            </button>
-                            <br> <br>
-                            <button id="donateBtn" type="button" class="btn btn-warning btn-lg">
-                                Consider Donating
-                            </button>
-                            <br> <br>
-
-                        </div>
-
-                    </div>
-
-                    <div style="display: none" class="option-container" id="type-selector">
-                        <h3 class="option-header">Hand Ranking Type:</h3>
-                        <form class="type-form" id="type-radio-form">
-                            <input type="radio" name="range-type" value="tight" checked> vs Tight 9
-                            <input type="radio" name="range-type" value="heads-up"> vs Random 1
-                            <input type="radio" name="range-type" value="random"> vs Random 9
-                        </form>
-                    </div>
-                    <div class="option-container" id="url-form" hidden>
-                        <h3 class="option-header">Link To Grid:</h3>
-                        <form id="form_range" action="">
-                            <input id="range-link" type="text" name="range-link" readonly="">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="row">
-                <div class="twelve columns">
-                    <h2>About</h2>
-                    <p>
-                        The data for hand ranks were gathered from three sources. You can see links to the websites to
-                        learn
-                        more about the specific methodology used to generate the hand rankings.
-                    </p>
-                    <ul>
-                        <li><a href="http://www.propokertools.com/orderings/heordering.txt">Tight 9</a></li>
-                        <li><a href="http://www.jazbo.com/poker/huholdem.html">Random 1</a></li>
-                        <li><a href="http://holdemtight.com/pgs/od/oddpgs/3-169holdemhands.htm">Random 9</a></li>
-                    </ul>
-                    <p>
-                        The inspiration for this visualization was <a
-                            href="http://www.pokerhandrange.com/">www.pokerhandrange.com</a>
-                    </p>
-                    </p>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                </div>
-            </div> -->
         </div>
         <br>
-    </main>
+        <div class="wrapperOfButton">
+
+        </div>
+
+        <div class="row">
+            <div class="two-thirds column pane">
+                <svg width="500" height="500" id="handgrid"></svg>
+            </div>
+            <div class="one-third column pane">
+                <div class="option-container" id="range-selectors">
+
+                    <div class="range-display" id="late">
+                        <p><b><span style="color:rgb(16, 141, 16)">Range</span></b> <input class="range-text"
+                                type="text" size="2" name="slider-value">%</p>
+                        <input type="range" min=".5" max="100" value="25" step=".5" class="slider">
+                    </div>
+                    <div class="range-display" id="late">
+                        <br>
+                        <label for="sel1" style="color: rgb(95, 10, 10)">Ante Size</label>
+                        <label class="radio-inline"><input type="radio" name="anteRadio" value=10 checked>10%</label>
+                        <label class="radio-inline"><input type="radio" name="anteRadio" value=12.5>12.5%</label>
+                        <label for="sel1" style="color: rgb(95, 10, 10)">Number Of Players</label>
+                        <select class="form-control" id="numOfPlayers">
+                            <option>9</option>
+                            <option>8</option>
+                            <option>7</option>
+                        </select>
+                        <label for="sel1" style="color: rgb(95, 10, 10)">Your Position</label>
+                        <select class="form-control" id="position">
+                            <option>UTG</option>
+                            <option>UTG+1</option>
+                            <option>UTG+2</option>
+                            <option>LOWJACK</option>
+                            <option>HIGHJACK</option>
+                            <option>CUT OFF</option>
+                            <option>BUTTON</option>
+                            <option>SMALL BLIND</option>
+                        </select>
+                        <label for="sel1" style="color: rgb(95, 10, 10)">Your Stack (Big Blinds)</label>
+                        <select class="form-control" id="bigBlinds">
+                        </select>
+                        <br>
+                        <button type="button" id="calculateBTN" class="btn btn-primary " data-toggle="modal"
+                            data-target="#exampleModal">
+                            Calculate Shoving Range
+                        </button>
+                        <br> <br>
+                        <br> <br>
+
+                    </div>
+
+                </div>
+
+                <div style="display: none" class="option-container" id="type-selector">
+                    <h3 class="option-header">Hand Ranking Type:</h3>
+                    <form class="type-form" id="type-radio-form">
+                        <input type="radio" name="range-type" value="tight" checked> vs Tight 9
+                        <input type="radio" name="range-type" value="heads-up"> vs Random 1
+                        <input type="radio" name="range-type" value="random"> vs Random 9
+                    </form>
+                </div>
+                <div class="option-container" id="url-form" hidden>
+                    <h3 class="option-header">Link To Grid:</h3>
+                    <form id="form_range" action="">
+                        <input id="range-link" type="text" name="range-link" readonly="">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
 
 
 
@@ -253,31 +168,9 @@
 
 
     <script type="module" src="www/js/controller.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script> -->
 
     <script src="www/js/ui/ui.js"></script>
 
-    <!-- <script>
-        const arr = ["AA", "KK", "QQ", "AKs", "JJ", "AQs", "KQs", "AJs", "KJs", "TT", "AK", "ATs", "QJs", "KTs", "QTs", "JTs", "99", "AQ", "A9s", "KQ", "88", "K9s", "T9s", "A8s", "Q9s", "J9s", "AJ", "A5s", "77", "A7s", "KJ", "A4s", "A3s", "A6s", "QJ", "66", "K8s", "T8s", "A2s", "98s", "J8s", "AT", "Q8s", "K7s", "KT", "55", "JT", "87s", "QT", "44", "33", "22", "K6s", "97s", "K5s", "76s", "T7s", "K4s", "K3s", "K2s", "Q7s", "86s", "65s", "J7s", "54s", "Q6s", "75s", "96s", "Q5s", "64s", "Q4s", "Q3s", "T9", "T6s", "Q2s", "A9", "53s", "85s", "J6s", "J9", "K9", "J5s", "Q9", "43s", "74s", "J4s", "J3s", "95s", "J2s", "63s", "A8", "52s", "T5s", "84s", "T4s", "T3s", "42s", "T2s", "98", "T8", "A5", "A7", "73s", "A4", "32s", "94s", "93s", "J8", "A3", "62s", "92s", "K8", "A6", "87", "Q8", "83s", "A2", "82s", "97", "K7", "76", "72s", "65", "T7", "K6", "86", "54", "K5", "J7", "75", "Q7", "K4", "K3", "96", "K2", "64", "Q6", "53", "85", "T6", "Q5", "43", "Q4", "Q3", "74", "Q2", "J6", "63", "J5", "95", "52", "J4", "J3", "42", "J2", "84", "T5", "T4", "32", "T3", "73", "T2", "62", "94", "93", "92", "83", "82", "72"];
-
-        var sorted_arr = arr.slice().sort(); // You can define the comparing function here. 
-        // JS by default uses a crappy string compare.
-        // (we use slice to clone the array so the
-        // original array won't be modified)
-        var results = [];
-        for (var i = 0; i < sorted_arr.length - 1; i++) {
-            if (sorted_arr[i + 1] == sorted_arr[i]) {
-                results.push(sorted_arr[i]);
-            }
-        }
-        console.log(arr.length);
-    </script> -->
 </body>
 
 </html>

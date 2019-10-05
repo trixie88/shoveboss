@@ -14,11 +14,6 @@ images.onclick = function (e) {
         captionText.innerHTML = e.target.alt;
     }
 }
-// img.onclick = function () {
-//     modal.style.display = "block";
-//     modalImg.src = this.src;
-//     captionText.innerHTML = this.alt;
-// }
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];

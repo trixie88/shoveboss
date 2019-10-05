@@ -2,7 +2,6 @@ import { Model } from "./model/model.js";
 import { Views } from "./views/views.js";
 
 let calculateBTN = document.getElementById("calculateBTN");
-let donateBtn = document.getElementById("donateBtn");
 const radioElements = document.querySelectorAll('input[name=range-type]');
 const sliderRangeElements = document.querySelectorAll("input[class=slider]");
 const sliderTextElements = document.querySelectorAll("input[class=range-text]");
@@ -86,9 +85,6 @@ const views = new Views(model);
 const controller = new Controller(model, views);
 controller.run();
 
-donateBtn.addEventListener("click", function () {
-    window.location.href = "donate.html";
-})
 
 calculateBTN.addEventListener("click", function () {
     let numOfPlayers = document.getElementById("numOfPlayers").value;
